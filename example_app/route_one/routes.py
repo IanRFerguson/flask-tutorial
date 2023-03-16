@@ -15,6 +15,7 @@ logging.basicConfig(level=logging.INFO)
 
 
 @bp.route("/", methods=["GET", "POST"])
+@bp.route("/home_route", methods=["GET", "POST"])
 def index():
     """
     LANDING PAGE
@@ -38,7 +39,9 @@ def index():
     if request.method == "POST":
         flash_a_message()
 
-        return redirect(url_for("route_one.index"))
+        name = random.choice(["Patrick", "Jeremy", "Robb", "Leo", "Joan", "Jose"])
+
+        return redirect(url_for("route_one.interactive_route", name=name))
 
     return render_template("index.html")
 
@@ -61,3 +64,8 @@ def example_route():
     return render_template(
         "route_one.html", state_name=state, flag_image=state_flags[state]
     )
+
+
+@bp.route("/interactive/<name>", methods=["GET", "POST"])
+def interactive_route(name: str):
+    return render_template("interactive.html", name=name)
