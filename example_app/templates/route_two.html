@@ -1,0 +1,29 @@
+<html>
+{% extends "base.html" %}
+
+<body>
+    {% block content %}
+    <div class="main_container">
+        <h1>90's Superstars</h1>
+    </div>
+    {% if first_name != "Kareem" %}
+    <div class="main_container">
+        <h2>This is {{ full_name }}</h2>
+        <h4>
+            {{ first_name }} played for the <b>{{ team }}</b>
+        </h4>
+        <img src="{{ image }}" width="65%">
+    </div>
+    {% else %}
+    <div class="main_container">
+        <h2>This is {{ full_name }}</h2>
+        <h4>
+            {{ first_name }} <b>DID NOT</b> play for the {{ team }} in the 1990's
+        </h4>
+        <img src="{{ image }}" width="65%">
+    </div>
+    {% endif %}
+    {% endblock %}
+</body>
+
+</html>

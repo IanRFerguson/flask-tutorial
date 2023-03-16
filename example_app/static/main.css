@@ -1,0 +1,16 @@
+body {
+    text-align: center;
+    font-family: monospace;
+    list-style-type: none;
+}
+
+.main_container {
+    margin-top: 5%;
+    padding: 2% 2%;
+}
+
+.navbar-link {
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+}

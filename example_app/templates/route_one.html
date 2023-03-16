@@ -1,0 +1,16 @@
+<html>
+{% extends "base.html" %}
+
+<body>
+    {% block content %}
+    <div class="main_container">
+        <h1>State Flag Route</h1>
+    </div>
+    <div class="main_container">
+        <h3>This is the <b>{{ state_name }}</b> state flag</h3>
+        <img src="{{ flag_image }}" width="60%">
+    </div>
+    {% endblock %}
+</body>
+
+</html>
